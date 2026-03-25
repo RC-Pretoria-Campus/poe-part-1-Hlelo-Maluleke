@@ -1,11 +1,14 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.Linq;
 using System.Text;
+using System.Threading;
 
 namespace Jarv1s
 {
     public class ResponseSys
     {
+        // A dictionary to store user input keywords and corresponding responses
         private Dictionary<string, string> responses = new Dictionary<string, string>
         {
             { "hello", "Hello! How can I assist you today?" },
@@ -62,6 +65,7 @@ namespace Jarv1s
             { "weak password", "Weak passwords are easily guessed. Avoid simple patterns, birthdays, or dictionary words. Use a mix of character types instead." },
             { "ransomware", "Ransomware encrypts your files and demands payment for decryption. Prevention: regular backups, never pay, and keep software updated." },
             { "phishing", "Phishing is a social engineering attack where scammers impersonate trusted entities to steal credentials. Watch for suspicious emails!" },
+            { "phising", "Phishing is a social engineering attack where scammers impersonate trusted entities to steal credentials. Watch for suspicious emails!" },
             { "phish", "Phishing attacks use fake emails or websites to trick you. Never click unknown links or provide personal info via email." },
             { "ddos", "A DDoS attack floods a server with massive traffic, making it unavailable. Types: volumetric, protocol, and application layer attacks." },
             { "dos attack", "A DoS attack aims to make a service unavailable. DDoS involves multiple attackers. Both are serious threats." },
@@ -131,13 +135,18 @@ namespace Jarv1s
             { "future", "The future of cybersecurity is challenging but exciting! As technology evolves, so do threats and defenses." },
             { "new", "New threats emerge constantly. Stay informed about the latest security trends and updates!" }
         };
-
+        // Method to process user input and return appropriate responses
         public string UserResponse(string userInput)
         {
             userInput = userInput.ToLower();
-            if (string.IsNullOrEmpty(userInput) ) {
+            if (string.IsNullOrEmpty(userInput)) {
                 return "Please enter a valid input.";
             }
+
+            // Sort by keyword length (longest first) to match more specific keywords before shorter ones
+            var sortedResponses = responses.OrderByDescending(x => x.Key.Length);
+            // fixed phising keyword issue
+
             foreach (var response in responses)
             {
                 if (userInput.Contains(response.Key) || userInput.ToLower() == "exit")
@@ -146,6 +155,16 @@ namespace Jarv1s
                 }
             }
             return "I'm sorry, I don't understand. Can you please rephrase?";
+        }
+        // Method to create a typing effect when displaying responses
+        public static void TypingEffect(string text, int delayMs = 30)
+        {
+            foreach (char character in text)
+            {
+                Console.Write(character);
+                Thread.Sleep(delayMs);
+            }
+            Console.WriteLine();
         }
     }
 }
