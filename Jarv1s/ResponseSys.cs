@@ -11,6 +11,7 @@ namespace Jarv1s
         // A dictionary to store user input keywords and corresponding responses
         private Dictionary<string, string> responses = new Dictionary<string, string>
         {
+            { "phishing", "Phishing is a social engineering attack where scammers impersonate trusted entities to steal credentials. Watch for suspicious emails! Phishing attacks use fake emails or websites to trick you. Never click unknown links or provide personal info via email." },
             { "hello", "Hello! How can I assist you today?" },
             { "hi", "Hello! How can I assist you today?" },
             { "hey", "Hey there! What would you like to know?" },
@@ -24,26 +25,13 @@ namespace Jarv1s
             { "cool", "Glad you think so! Any other questions?" },
             { "awesome", "Awesome! I love the enthusiasm. What else would you like to know?" },
             { "interesting", "Right? Cybersecurity is a fascinating field! Want to learn more?" },
-            { "can you", "I'll do my best to help! Ask away." },
-            { "tell me", "I'd be happy to share! What would you like to know?" },
-            { "explain", "Sure! Let me break that down for you." },
-            { "what is", "Great question! Let me explain." },
             { "why", "Good thinking! That's an important question." },
-            { "how does", "Let me explain how that works." },
-            { "more about", "I'd love to tell you more!" },
-            { "again", "Of course! Let me repeat that for you." },
-            { "repeat", "Sure thing! Here it is again." },
-            { "i don't understand", "No problem! Let me try explaining it differently." },
-            { "confused", "That's okay! Cybersecurity can be complex. Want me to simplify it?" },
-            { "sorry", "No worries at all! It happens. How can I help?" },
             { "ok", "Great! Anything else you'd like to know?" },
             { "alright", "Perfect! Let's continue." },
             { "yes", "Excellent! What's next?" },
             { "no", "I understand. Feel free to ask anything else!" },
-            { "purpose", "To provide educational information about cybersecurity." },
             { "help", "I can help with: encryption, malware, firewall, vulnerability, password security, ransomware, phishing, DDoS, authentication, network security, data breaches, antivirus, social engineering, two-factor auth, and software updates. Ask about any of these!" },
-            { "what can you do", "I can teach you about various cybersecurity topics! Try asking about threats, protection methods, or specific security concepts." },
-            { "what can i do", "You can ask me about cybersecurity topics, best practices, or threats. Type 'help' to see available topics!" },
+            { "can you do", "I can teach you about various cybersecurity topics! Try asking about threats, protection methods, or specific security concepts." },
             { "capabilities", "I'm knowledgeable about cybersecurity topics. Ask me anything from basic concepts to advanced threats!" },
             { "threat", "There are many types of threats: DDoS attacks, Spoofing, Phishing, Malware, Ransomware, Viruses, Trojans, and Worms. Which one interests you?" },
             { "threats", "Cyber threats include: malware, ransomware, phishing attacks, DDoS, data breaches, social engineering, and more. Want details on any?" },
@@ -64,9 +52,6 @@ namespace Jarv1s
             { "password security", "Use unique, complex passwords for each account. Enable password managers and change passwords if compromised." },
             { "weak password", "Weak passwords are easily guessed. Avoid simple patterns, birthdays, or dictionary words. Use a mix of character types instead." },
             { "ransomware", "Ransomware encrypts your files and demands payment for decryption. Prevention: regular backups, never pay, and keep software updated." },
-            { "phishing", "Phishing is a social engineering attack where scammers impersonate trusted entities to steal credentials. Watch for suspicious emails!" },
-            { "phising", "Phishing is a social engineering attack where scammers impersonate trusted entities to steal credentials. Watch for suspicious emails!" },
-            { "phish", "Phishing attacks use fake emails or websites to trick you. Never click unknown links or provide personal info via email." },
             { "ddos", "A DDoS attack floods a server with massive traffic, making it unavailable. Types: volumetric, protocol, and application layer attacks." },
             { "dos attack", "A DoS attack aims to make a service unavailable. DDoS involves multiple attackers. Both are serious threats." },
             { "authentication", "Authentication verifies your identity. Multi-factor authentication (MFA) requires multiple verification methods for better security." },
@@ -104,17 +89,9 @@ namespace Jarv1s
             { "risk", "Security risk is the potential for loss from threats. Assess risks and implement appropriate controls." },
             { "threat actor", "Threat actors are individuals or groups performing cyberattacks. They range from script kiddies to nation-states." },
             { "zero day", "A zero-day vulnerability is unknown to the software vendor. Attackers exploit it before a patch exists." },
-            { "bot", "I'm Jarv1s, an AI assistant dedicated to cybersecurity education! Ask me anything about keeping your digital life secure." },
-            { "who are you", "I'm Jarv1s, your cybersecurity educational assistant! I'm here to teach you about digital threats and protection." },
-            { "your name", "I'm Jarv1s! Nice to meet you. What would you like to learn about cybersecurity?" },
-            { "what's your purpose", "My purpose is to educate you about cybersecurity concepts, threats, and best practices." },
-            { "when", "Cybersecurity is important all the time! Threats are constantly evolving, so stay vigilant." },
-            { "where", "Cyber threats are everywhere—online, in email, on networks. That's why defense is so important." },
-            { "question", "Great! I'm here to answer cybersecurity questions. Go ahead and ask!" },
-            { "topic", "I cover many cybersecurity topics. Type 'help' to see the full list!" },
-            { "learn", "I'd love to teach you! Ask about any cybersecurity topic you're curious about." },
-            { "teach", "Absolutely! Cybersecurity education is my passion. What would you like to know?" },
-            { "info", "I have plenty of information to share! What topic interests you?" },
+            { "who are you", "I'm Jarvis, your cybersecurity educational assistant! I'm here to teach you about digital threats and protection." },
+            { "your name", "I'm Jarvis! Nice to meet you. What would you like to learn about cybersecurity?" },
+            { "purpose", "My purpose is to educate you about cybersecurity concepts, threats, and best practices." },
             { "information", "I can provide detailed information on cybersecurity topics. What would you like to know?" },
             { "detail", "I'm happy to go into detail! Ask a specific question and I'll explain thoroughly." },
             { "example", "Great idea! I can provide examples. What topic would you like an example of?" },
@@ -124,16 +101,6 @@ namespace Jarv1s
             { "advice", "My advice: prioritize strong passwords, enable 2FA, keep software updated, and stay aware of phishing attempts." },
             { "recommend", "I recommend implementing multiple security layers: firewalls, encryption, strong authentication, and regular monitoring." },
             { "suggestion", "A practical suggestion: start with strong passwords and 2FA, then learn about other security measures." },
-            { "concern", "Security concerns are valid! Threats are real, but proper practices dramatically reduce your risk." },
-            { "worried", "Don't worry! By learning about cybersecurity, you're already taking the right steps to protect yourself." },
-            { "nervous", "It's natural to feel concerned about cybersecurity! Knowledge is your best defense." },
-            { "challenge", "Cybersecurity challenges include evolving threats and human error. Continuous learning helps address them." },
-            { "problem", "Many security problems stem from weak passwords and lack of awareness. Education and tools can solve most issues." },
-            { "solution", "Solutions include strong authentication, encryption, firewalls, regular updates, and user awareness." },
-            { "career", "Cybersecurity is a booming career field! It offers great opportunities and is in high demand." },
-            { "job", "Cybersecurity offers diverse job roles: analyst, engineer, architect, penetration tester, and more." },
-            { "future", "The future of cybersecurity is challenging but exciting! As technology evolves, so do threats and defenses." },
-            { "new", "New threats emerge constantly. Stay informed about the latest security trends and updates!" }
         };
         // Method to process user input and return appropriate responses
         public string UserResponse(string userInput)
@@ -143,13 +110,15 @@ namespace Jarv1s
                 return "Please enter a valid input.";
             }
 
-            // Sort by keyword length (longest first) to match more specific keywords before shorter ones
-            var sortedResponses = responses.OrderByDescending(x => x.Key.Length);
-            // fixed phising keyword issue
+            // Check for exit command first
+            if (userInput == "exit")
+            {
+                return "exit";
+            }
 
             foreach (var response in responses)
             {
-                if (userInput.Contains(response.Key) || userInput.ToLower() == "exit")
+                if (userInput.Contains(response.Key))
                 {
                     return response.Value;
                 }
@@ -157,7 +126,7 @@ namespace Jarv1s
             return "I'm sorry, I don't understand. Can you please rephrase?";
         }
         // Method to create a typing effect when displaying responses
-        public static void TypingEffect(string text, int delayMs = 30)
+        public static void TypingEffect(string text, int delayMs = 20)
         {
             foreach (char character in text)
             {

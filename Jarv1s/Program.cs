@@ -1,27 +1,9 @@
 ﻿using Jarv1s;
 using System;
 using System.Reflection.Metadata;
-using System.Speech.Synthesis;
 
-/* PSEUDOCODE 
- - Display ASCII art using ASCII class.
- - Prompt user for name.
- - Use a nullable string variable (userName = null) to hold name input while validating.
- - Loop until a non-empty, non-whitespace name is entered:
-    - Read a line from Console and call .ToUpper() to normalize, then store in userName.
-    - If userName is null or whitespace, show an error and continue the loop.
-    - When valid name is entered, exit the loop.
- - Greet the user with the validated userName.
- - Enter the main chat loop:
-    - Display colored prompt with the username.
-    - Read user input from Console and convert to lowercase.
-    - Get response from ResponseSys.UserResponse() method.
-    - Check if user typed "exit" to break out of loop.
-    - Display response using ResponseSys.PrintWithTypingEffect() for typewriter effect.
-    - Reset console color and repeat until user exits.
-*/
-SpeechSynthesizer speech = new SpeechSynthesizer();
-speech.Speak("I am a CyberSecurity awareness chatbot, welcome, please enter your name.");
+wavPlayer wavPlayer = new wavPlayer();
+wavPlayer.PlayWav("GreetingVoice.wav");
 ASCII ascii = new ASCII(); //an instance of the ASCII class 
 ascii.DisplayASCIIART(); //to call the DisplayASCIIART method
 
@@ -55,7 +37,7 @@ while (true)
     Console.Write($"{userName}: ");
     string userInput = Console.ReadLine().ToLower();
     string printResponse = response.UserResponse(userInput);
-    if (userInput == "exit")
+    if (printResponse == "exit")
     {
         Console.ForegroundColor = ConsoleColor.Red;
         ResponseSys.TypingEffect("Exiting Jarv1s. Goodbye!");
@@ -63,6 +45,6 @@ while (true)
         break;
     }
     Console.ForegroundColor = ConsoleColor.Green;
-    ResponseSys.TypingEffect(printResponse, 30);
+    ResponseSys.TypingEffect(printResponse, 20);
     Console.ResetColor();
 }
