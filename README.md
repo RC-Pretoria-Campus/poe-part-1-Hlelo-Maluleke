@@ -17,4 +17,4 @@
     - Display response using ResponseSys.PrintWithTypingEffect() for typewriter effect.
     - Reset console color and repeat until user exits.
 
-<img width="1920" height="1080" alt="Screenshot 2025-11-01 202256" src="https://github.com/user-attachments/assets/42a9e07e-35de-4883-ae9b-7e475a7817f3" />
+<img width="1879" height="627" alt="Screenshot 2026-04-13 195301" src="https://github.com/user-attachments/assets/b16e2696-181a-44f3-aedb-4cc069d08131" />
