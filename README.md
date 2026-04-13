@@ -16,3 +16,5 @@
     - Check if user typed "exit" to break out of loop.
     - Display response using ResponseSys.PrintWithTypingEffect() for typewriter effect.
     - Reset console color and repeat until user exits.
+
+<img width="1920" height="1080" alt="Screenshot 2025-11-01 202256" src="https://github.com/user-attachments/assets/42a9e07e-35de-4883-ae9b-7e475a7817f3" />
